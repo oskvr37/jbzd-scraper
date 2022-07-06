@@ -5,8 +5,11 @@ Tool allowing to scrape and save content of popular memes website [JBZD](https:/
 main features
 - [ ] saving content to database
 - [ ] efficient downloading content with threading
-- [ ] date presets (6h, 12h etc.)
 - [ ] own API
+
+scraping
+- [x] get exact page
+- [ ] add date presets (6h, 12h etc.)
 
 memes
 - [x] meme id
