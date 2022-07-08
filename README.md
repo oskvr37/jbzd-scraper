@@ -3,9 +3,9 @@ Tool allowing to scrape and save content of popular memes website [JBZD](https:/
 
 # TODO
 main features
-- [ ] saving content to database
+- [ ] saving content to database (MongoDB)
 - [ ] efficient downloading content with threading
-- [ ] own API
+- [ ] own API (fastAPI)
 
 scraping
 - [x] get exact page
@@ -14,7 +14,7 @@ scraping
 memes
 - [x] meme id
 - [x] url source
-- [ ] video or photo type
+- [x] video or photo type
 - [ ] category
 - [ ] number of votes and comments
 - [ ] scraping comments
