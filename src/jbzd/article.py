@@ -5,11 +5,13 @@ class Article:
             img = el.select('div div a img')[0]
             self.src = img['src']
             self.title = img['alt']
+            self.type = 'img'
         except:
-            # need to figure out how to scrap video src
-            # vid = el.find_all('video')
-            self.src = ''
-            self.title = ''
+            # TODO better exception handling
+            vid = el.find_all('videoplyr')[0]
+            self.src = vid['video_url']
+            self.title = ''.join(el.select('h3 a')[0].get_text()).strip()
+            self.type = 'vid'
 
     def __str__(self):
-        return f'Article {self._id} - {self.title} [ {self.src} ]'
+        return f'Article {self._id} {self.type} - {self.title} [ {self.src} ]'
