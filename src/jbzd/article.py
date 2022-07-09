@@ -1,6 +1,6 @@
 class Article:
     def __init__(self, el) -> None:
-        self._id = el.get('data-content-id')
+        self._id = int(el.get('data-content-id'))
         try:
             img = el.select('div div a img')[0]
             self.src = img['src']
