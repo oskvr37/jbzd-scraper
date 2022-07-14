@@ -7,12 +7,29 @@ class Database:
         self.client = MongoClient(uri)
         self.db = self.client[name]
 
+    # create toDoc method to article
+
     def insertArticle(self, article: Article):
-        articles = self.db['articles']
+        # id duplicate exception may occur
+        db_articles = self.db['articles']
         doc = {
             '_id': article._id,
             'title': article.title,
             'src': article.src,
             'type': article.type
         }
-        articles.insert_one(doc)
+        db_articles.insert_one(doc)
+
+    def insertArticles(self, articles: list[Article]):
+        # id duplicate exception may occur
+        db_articles = self.db['articles']
+        docs = []
+        for article in articles:
+            doc = {
+                '_id': article._id,
+                'title': article.title,
+                'src': article.src,
+                'type': article.type
+            }
+            docs.append(doc)
+        db_articles.insert_many(docs)
